@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Settings</title>  <script type="module" crossorigin src="./js/app.min.js?v=1768733958240"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1768733958240">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<picture><source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp"><source media="(max-width: 1200px)" srcset="./assets/img/logo-1200.webp" type="image/webp"><img class="menu__logo" aria-label="Animmaster Logo" width="50" height="50"  src="./assets/img/logo.webp" ></picture>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/c/Animmaster/membership">Animmaster Pro Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-settingsdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Build settings
+               <span class="doc-hero__title-sub">Configure the template via <code>template.config.js</code></span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This page explains the main options inside <code>template.config.js</code>.
+               The idea is simple: you can enable/disable features and adapt the workflow without touching build code.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+               <!-- ========================================================= -->
+               <!-- 1) Where settings live -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="where" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Where to edit settings</h2>
+
+                  <p class="doc-p">
+                     Open <code>template.config.js</code> in the project root. This file is the “control panel” of the
+                     build system: server, assets pipeline, styles, scripts, and optional modules.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Change one option at a time and run <code>npm run dev</code> to confirm the result.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Quick reference (copy/paste) -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="quick" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Quick reference</h2>
+
+                  <p class="doc-p">
+                     This is a compact list of the top-level keys you’ll see in <code>template.config.js</code>.
+                     Below, each block is explained in detail.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js — main keys</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+vscode
+devcomponents
+newpage
+git
+navpanel
+statistics
+server
+html
+styles
+fonts
+images
+js
+php
+pug
+ftp
+logger
+projectpage
+aliases
+coffee</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) VS Code -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="vscode" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Editor helpers</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>vscode</code></h3>
+                     <p class="doc-p">
+                        Settings for VS Code integration (auto-config of helpful things).
+                     </p>
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>settings</code> — auto setup of path aliases for Path
+                           Autocomplete.</li>
+                        <li class="doc-list__item"><code>snippets</code> — auto add project snippets (can be disabled).
+                        </li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Dev components + New page -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="dev-newpage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Dev tools: components page &amp; page generator</h2>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>devcomponents</code></h3>
+                        <p class="doc-p">
+                           Controls the “components playground” page used during development.
+                        </p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>enable</code> — enable/disable the page
+                              (<code>true/false</code>).</li>
+                           <li class="doc-list__item"><code>filename</code> — filename of the playground page.</li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>newpage</code></h3>
+                        <p class="doc-p">
+                           Controls the “create new page” feature (generator).
+                        </p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>copyfromindex</code> — create a page based on
+                              <code>src/index.html</code>.
+                           </li>
+                           <li class="doc-list__item"><code>usetemplate</code> — which template to use when
+                              <code>copyfromindex: false</code>.
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Git / Nav panel -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="git-navpanel" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">GitHub publishing &amp; navigation panel</h2>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>git</code></h3>
+                        <p class="doc-p">Settings used by the GitHub publish command.</p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>repo</code> — repository path.</li>
+                           <li class="doc-list__item"><code>branch</code> — branch name.</li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>navpanel</code></h3>
+                        <p class="doc-p">
+                           Controls an optional navigation panel for quick access during development / build previews.
+                        </p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>dev</code> — show in dev mode (<code>true/false</code>).
+                           </li>
+                           <li class="doc-list__item"><code>build</code> — show in production output
+                              (<code>true/false</code>).</li>
+                           <li class="doc-list__item"><code>position</code> — <code>left</code> / <code>right</code>.
+                           </li>
+                           <li class="doc-list__item"><code>color</code> — text/links color.</li>
+                           <li class="doc-list__item"><code>background</code> — background color.</li>
+                           <li class="doc-list__item"><code>transition</code> — open/close animation speed (ms).</li>
+                        </ul>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Statistics -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="stats" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Project statistics</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>statistics</code></h3>
+                     <p class="doc-p">Controls whether the build system collects and prints project statistics.</p>
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>enable</code> — allow statistics collection
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>showonbuild</code> — auto print stats after production build
+                           (<code>true/false</code>).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) Server -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="server" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Local server &amp; output behavior</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>server</code></h3>
+                     <p class="doc-p">Controls the local dev server and how output paths are generated.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>path</code> — paths format: <code>./</code> relative or
+                           <code>/</code> absolute.
+                        </li>
+                        <li class="doc-list__item"><code>isassets</code> — put final CSS/JS into
+                           <code>dist/assets</code> (<code>true/false</code>).
+                        </li>
+                        <li class="doc-list__item"><code>buildforlocal</code> — build to open from file explorer (no
+                           server). Forces single JS/CSS bundle.</li>
+                        <li class="doc-list__item"><code>copyfiles</code> — copy <code>src/files</code> to
+                           <code>dist/files</code> on build (<code>true/false</code>).
+                        </li>
+                        <li class="doc-list__item"><code>version</code> — add cache-busting version to CSS/JS
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>hostname</code> — server host name.</li>
+                        <li class="doc-list__item"><code>port</code> — server port.</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        If you enable <code>buildforlocal</code>, scripts and styles are forced into one bundle so the
+                        site can work without a server.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) HTML -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="html" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">HTML processing</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>html</code></h3>
+                     <p class="doc-p">Controls how HTML is formatted in production builds.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>beautify.enable</code> — enable formatting
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>beautify.indent</code> — indentation style.</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 9) Styles -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="styles" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Styles &amp; SCSS pipeline</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>styles</code></h3>
+                     <p class="doc-p">Controls CSS/SCSS compilation and production optimizations.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>tailwindcss</code> — enable Tailwind (<code>true/false</code>).
+                        </li>
+                        <li class="doc-list__item"><code>pxtorem</code> — convert px → rem on build
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>critical</code> — generate critical CSS and inject into HTML
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>codesplit</code> — split CSS by pages and load only what is
+                           needed (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>devfiles</code> — create unminified copies in production
+                           (<code>true/false</code>).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 10) Fonts -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="fonts" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Fonts</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>fonts</code></h3>
+                     <p class="doc-p">Controls fonts processing and optional automation.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>iconsfont</code> — generate icon font from SVG icons
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>download</code> — download remote fonts (e.g. Google Fonts) and
+                           make them local (<code>true/false</code>).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 11) Images -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="images" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Images pipeline</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images</code></h3>
+                     <p class="doc-p">Controls image conversion, resizing, and optimization in production builds.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>svgsprite</code> — generate SVG sprite
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>optimize.enable</code> — enable optimization
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>optimize.edithtml</code> — rewrite HTML to match generated
+                           formats/sizes.</li>
+                        <li class="doc-list__item"><code>optimize.sizes</code> — extra image widths to generate.</li>
+                        <li class="doc-list__item"><code>optimize.dpi</code> — multipliers for extra files (e.g. 2x).
+                        </li>
+                        <li class="doc-list__item"><code>optimize.attrignore</code> — if an <code>&lt;img&gt;</code> has
+                           this attribute, skip processing.</li>
+                        <li class="doc-list__item"><code>modernformat.enable</code> — convert to modern formats
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>modernformat.type</code> — <code>webp</code> /
+                           <code>avif</code>.
+                        </li>
+                        <li class="doc-list__item"><code>modernformat.only</code> — keep only modern files after convert
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>modernformat.quality</code> — quality for modern formats.</li>
+                        <li class="doc-list__item"><code>jpeg.quality</code> — JPEG optimization quality.</li>
+                        <li class="doc-list__item"><code>png.quality</code> — PNG optimization quality.</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">If optimization is disabled</div>
+                     <div class="doc-callout__text">
+                        Images will be copied “as is” (no conversion and no compression).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 12) JavaScript -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="js" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">JavaScript pipeline</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>js</code></h3>
+                     <p class="doc-p">Controls component connection, production output, and framework integration.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>hotmodules</code> — auto-detect and connect components
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>devfiles</code> — create unminified copies in production
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>bundle.enable</code> — force one JS + one CSS output file
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>react</code> — enable React processing
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>vue</code> — enable Vue processing (<code>true/false</code>).
+                        </li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 13) PHP + PUG -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="php-pug" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">PHP server &amp; PUG</h2>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>php</code></h3>
+                        <p class="doc-p">Local PHP server settings (only if you use it).</p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>enable</code> — enable PHP server (<code>true/false</code>).
+                           </li>
+                           <li class="doc-list__item"><code>base</code> — folder where PHP files live.</li>
+                           <li class="doc-list__item"><code>hostname</code> — host name.</li>
+                           <li class="doc-list__item"><code>port</code> — port.</li>
+                           <li class="doc-list__item"><code>binary</code> — path to PHP interpreter.</li>
+                           <li class="doc-list__item"><code>ini</code> — path to <code>php.ini</code>.</li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>pug</code></h3>
+                        <p class="doc-p">Enables the PUG preprocessor.</p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>enable</code> — enable PUG (<code>true/false</code>).</li>
+                        </ul>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 14) FTP -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="ftp" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">FTP deploy (optional)</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>ftp</code></h3>
+                     <p class="doc-p">
+                        Used by the production deploy command to upload files from <code>dist/</code> to a hosting
+                        server.
+                     </p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>host</code> — FTP host.</li>
+                        <li class="doc-list__item"><code>port</code> — FTP port.</li>
+                        <li class="doc-list__item"><code>remoteDir</code> — remote folder.</li>
+                        <li class="doc-list__item"><code>user</code> — username.</li>
+                        <li class="doc-list__item"><code>password</code> — password.</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Security</div>
+                     <div class="doc-callout__text">
+                        Don’t commit real FTP passwords to public repositories. Use environment variables if needed.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 15) Logger -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="logger" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Logs</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>logger</code></h3>
+                     <p class="doc-p">Controls logging in the terminal and browser console.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>terminal</code> — module logs in terminal
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>console.enable</code> — component logs in browser console
+                           (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>console.removeonbuild</code> — remove logs in production builds
+                           (<code>true/false</code>).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 16) Project page -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="projectpage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Project page generator</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>projectpage</code></h3>
+                     <p class="doc-p">
+                        Generates a “project page” in production with links to all HTML pages — useful for demos.
+                     </p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>enable</code> — enable generator (<code>true/false</code>).
+                        </li>
+                        <li class="doc-list__item"><code>projectname</code> — title text (empty → uses folder name).
+                        </li>
+                        <li class="doc-list__item"><code>template</code> — template file path.</li>
+                        <li class="doc-list__item"><code>outfilename</code> — output file name (empty → uses folder
+                           name).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 17) Aliases -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="aliases" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Path aliases</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>aliases</code></h3>
+                     <p class="doc-p">
+                        Controls path aliases used in the project (for example in HTML/JS/SCSS imports).
+                        Aliases help you avoid long relative paths.
+                     </p>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 18) Coffee reminder -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="coffee" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Break reminder</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>coffee</code></h3>
+                     <p class="doc-p">Shows a periodic reminder message in the terminal.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>enable</code> — enable reminder (<code>true/false</code>).</li>
+                        <li class="doc-list__item"><code>text</code> — message text.</li>
+                        <li class="doc-list__item"><code>interval</code> — interval in minutes.</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Every project you start without a solid foundation costs you time.
+                     Download Animmaster Vite Template and start your next project with a structure that already works.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/instfonts.html">
+                     Next: Working with fonts
+                     Local fonts, icon fonts, and Google Fonts
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#where">Where
+                           to edit</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#quick">Quick
+                           reference</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#vscode">Editor
+                           helpers</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#dev-newpage">Dev tools</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#git-navpanel">Git &amp; nav panel</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#stats">Statistics</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#server">Server</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#html">HTML</a>
+                     </li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#styles">Styles</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#fonts">Fonts</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#images">Images</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#js">JavaScript</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#php-pug">PHP
+                           &amp; PUG</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#ftp">FTP</a>
+                     </li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#logger">Logs</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#projectpage">Project page</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#aliases">Aliases</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#coffee">Break
+                           reminder</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer data-anim-footer="" class="footer">
+	<div class="footer__container">
+
+	</div>
+</footer>
+   
+		</div>
+		
+   
+	</body>
+</html>

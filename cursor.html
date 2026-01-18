@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Custom cursor</title>  <script type="module" crossorigin src="./js/app.min.js?v=1768733958247"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1768733958247">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<picture><source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp"><source media="(max-width: 1200px)" srcset="./assets/img/logo-1200.webp" type="image/webp"><img class="menu__logo" aria-label="Animmaster Logo" width="50" height="50"  src="./assets/img/logo.webp" ></picture>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/c/Animmaster/membership">Animmaster Pro Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-cursordoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Cursor
+               <span class="doc-hero__title-sub">Custom mouse cursor with animation and shadow</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Cursor component allows you to replace the default system mouse cursor
+               with a fully custom, animated version. You can style it freely and optionally
+               add a smooth trailing shadow for a more “premium” interactive feel.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+            <p class="doc-micro">
+               Custom cursor • Animated pointer • Optional shadow • Pure JS + SCSS
+            </p>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is the Cursor component?</h2>
+
+                  <p class="doc-p">
+                     The Cursor component replaces the default browser cursor with a custom HTML-based cursor.
+                     This allows you to animate it, scale it, change shapes, or react to hover states
+                     in ways that are impossible with the native cursor.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Design tip</div>
+                     <div class="doc-callout__text">
+                        Custom cursors work best on creative websites, portfolios, landing pages,
+                        and interactive experiences. Avoid using them in admin panels or data-heavy UIs.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     All component files are located in
+                     <code>src/components/effects/cursor</code>.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with cursor logic and mouse tracking.</li>
+                     <li class="doc-list__item">SCSS file for styling the cursor and its animations.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     To enable the custom cursor, add the attribute
+                     <code>data-anim-cursor</code> to the <code>&lt;html&gt;</code> element.
+                     The component will initialize automatically.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable custom cursor</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;html data-anim-cursor&gt;
+	...
+&lt;/html&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Once enabled, the default system cursor will be hidden and replaced
+                     by the custom one defined in the component styles.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Cursor shadow -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="shadow" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Cursor shadow (trail)</h2>
+
+                  <p class="doc-p">
+                     You can add a smooth trailing element (often called a “cursor shadow”)
+                     that follows the main cursor with a slight delay.
+                  </p>
+
+                  <p class="doc-p">
+                     To enable the shadow, add the attribute
+                     <code>data-anim-cursor-shadow</code> alongside the main cursor attribute.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable cursor shadow</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;html data-anim-cursor data-anim-cursor-shadow&gt;
+	...
+&lt;/html&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        The shadow is purely decorative. You can control its size, opacity,
+                        delay, and animation entirely via SCSS.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Styling -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="styling" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Styling and customization</h2>
+
+                  <p class="doc-p">
+                     The Cursor component is intentionally minimal in logic.
+                     All visual appearance is controlled via SCSS.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Change size, shape, and color of the cursor.</li>
+                     <li class="doc-list__item">Add scale or rotation on hover.</li>
+                     <li class="doc-list__item">Animate transitions between states.</li>
+                     <li class="doc-list__item">Disable the cursor on touch devices via media queries.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add an expressive, animated cursor to your projects
+                     and elevate the overall interaction quality.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+              
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/marquee.html">
+                     Next: Marquee component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#shadow">Shadow</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#styling">Styling</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer data-anim-footer="" class="footer">
+	<div class="footer__container">
+
+	</div>
+</footer>
+   
+		</div>
+		
+   
+	</body>
+</html>

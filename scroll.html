@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title> Component: ScrollTo</title>  <script type="module" crossorigin src="./js/app.min.js?v=1768733958242"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1768733958242">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<picture><source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp"><source media="(max-width: 1200px)" srcset="./assets/img/logo-1200.webp" type="image/webp"><img class="menu__logo" aria-label="Animmaster Logo" width="50" height="50"  src="./assets/img/logo.webp" ></picture>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/c/Animmaster/membership">Animmaster Pro Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-scrolltodoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: ScrollTo
+               <span class="doc-hero__title-sub">Smooth in-page navigation with optional active section
+                  highlighting</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component adds <strong>smooth scrolling</strong> to a target section after clicking a link/button.
+               If the page URL contains a hash and a matching section exists on the page, scrolling happens
+               automatically on load.
+               Optionally, you can build a “scroll spy” navigation that highlights the current link while you scroll.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+            <p class="doc-micro">
+               Smooth scroll • Header offset support • Hash on load • Active nav class via Watcher
+            </p>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-scrollto</code> to a navigation element and set its value to a CSS selector
+                     of the block you want to scroll to.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll to a class or an id</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;a href="#" data-anim-scrollto=".some-section" class="link"&gt;Go to section&lt;/a&gt;
+&lt;a href="#" data-anim-scrollto="#contacts" class="link"&gt;Contacts&lt;/a&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        You can use ScrollTo on any element (buttons, cards, etc.), not only on links.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Header offset -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="header-offset" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Account for a fixed header</h2>
+
+                  <p class="doc-p">
+                     If you have a fixed header and you don’t want the scroll position to land “under” it,
+                     add <code>data-anim-scrollto-header</code> to the navigation element.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll with header offset</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;a
+	href="#"
+	data-anim-scrollto-header
+	data-anim-scrollto=".some-section"
+	class="link"
+&gt;Go to section&lt;/a&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Extra top offset -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="top-offset" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Add an extra top offset</h2>
+
+                  <p class="doc-p">
+                     If you need an additional offset (e.g. spacing above the block),
+                     use <code>data-anim-scrollto-top</code> and provide a number (pixels).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll with extra offset</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;a
+	href="#"
+	data-anim-scrollto-top="30"
+	data-anim-scrollto="#contacts"
+	class="link"
+&gt;Contacts&lt;/a&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Active navigation (scroll spy) -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="active-nav" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Highlight the active navigation item</h2>
+
+                  <p class="doc-p">
+                     To enable automatic “active item” highlighting while you scroll, you need the
+                     <strong>Watcher</strong> component.
+                     Add <code>data-anim-watcher="navigator"</code> to the sections you want to track.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">ScrollTo + Watcher (navigator mode)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;a href="#" data-anim-scrollto=".some-section" class="link"&gt;Section&lt;/a&gt;
+
+...
+
+&lt;section data-anim-watcher="navigator" class="some-section"&gt;...&lt;/section&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     When the tracked section is in view, the corresponding navigation link receives the class
+                     <code>--navigator-active</code>. When the section leaves the viewport, the class is removed.
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Styling</div>
+                     <div class="doc-callout__text">
+                        Use <code>.link.--navigator-active</code> (or your selector) to style the active state.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Hash on page load -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="hash" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Scroll by hash on page load</h2>
+
+                  <p class="doc-p">
+                     If a URL contains a hash and a matching section is found, ScrollTo will automatically scroll to it.
+                     The simplest approach is to use a class name in the hash.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example URL + section</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+https://your-site.com/index.html#some-section
+
+&lt;section class="some-section"&gt; ... &lt;/section&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        If you prefer, you can also target an <code>#id</code> — just make sure it matches the hash.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Stop fighting anchor jumps. Get smooth scrolling, header offsets, and active section highlighting
+                     out of the box.
+                     Download the template and use ScrollTo in your next project.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/showmore.html">
+                     Back: Show more component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#header-offset">Header offset</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#top-offset">Extra offset</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#active-nav">Active navigation</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#hash">Hash on
+                           load</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer data-anim-footer="" class="footer">
+	<div class="footer__container">
+
+	</div>
+</footer>
+   
+		</div>
+		
+   
+	</body>
+</html>

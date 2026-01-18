@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Marquee</title>  <script type="module" crossorigin src="./js/app.min.js?v=1768733958243"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1768733958243">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<picture><source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp"><source media="(max-width: 1200px)" srcset="./assets/img/logo-1200.webp" type="image/webp"><img class="menu__logo" aria-label="Animmaster Logo" width="50" height="50"  src="./assets/img/logo.webp" ></picture>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/c/Animmaster/membership">Animmaster Pro Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-marqueedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Marquee
+               <span class="doc-hero__title-sub">Animated running line with flexible direction</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Marquee component creates a continuously animated line of elements.
+               It’s perfect for logos, announcements, tags, news tickers, or decorative UI motion.
+               The component supports speed control, spacing, hover pause, and multiple directions.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+            <p class="doc-micro">
+               Infinite loop • Smooth animation • Any direction • Zero dependencies
+            </p>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is a marquee?</h2>
+
+                  <p class="doc-p">
+                     A marquee is an animated container that continuously moves its child elements
+                     in a loop. Unlike the deprecated HTML <code>&lt;marquee&gt;</code> tag,
+                     this component is fully customizable, performant, and accessible.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Use cases</div>
+                     <div class="doc-callout__text">
+                        Brand logos, partner lists, promo messages, headlines,
+                        hashtags, testimonials, or subtle decorative motion.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     The Marquee component files are located in:
+                     <code>src/components/effects/marquee</code>
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with animation logic.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for styling and layout.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     To enable the marquee, wrap your elements in a container
+                     with the attribute <code>data-anim-marquee</code>.
+                     The JavaScript logic will connect automatically.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Basic marquee markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-marquee&gt;
+	&lt;div&gt;Item one&lt;/div&gt;
+	&lt;div&gt;Item two&lt;/div&gt;
+	&lt;div&gt;Item three&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Spacing & speed -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="options" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Spacing and speed</h2>
+
+                  <p class="doc-p">
+                     You can control the distance between elements and
+                     the animation speed using data attributes.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <code>data-anim-marquee-space</code> — spacing between items (px, default: 30)
+                     </li>
+                     <li class="doc-list__item">
+                        <code>data-anim-marquee-speed</code> — animation speed in milliseconds (default: 1000)
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Custom spacing & speed</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-marquee data-anim-marquee-space="50" data-anim-marquee-speed="2000"&gt;
+	&lt;div&gt;Item one&lt;/div&gt;
+	&lt;div&gt;Item two&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Direction & pause -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="direction" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Direction and pause on hover</h2>
+
+                  <p class="doc-p">
+                     By default, the marquee moves from right to left.
+                     You can change the direction or pause the animation on hover.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <code>data-anim-marquee-direction</code> — left / right / top / bottom
+                     </li>
+                     <li class="doc-list__item">
+                        <code>data-anim-marquee-pause</code> — pauses animation on hover
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Direction & hover pause</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-marquee
+	data-anim-marquee-direction="right"
+	data-anim-marquee-pause&gt;
+	&lt;div&gt;Item one&lt;/div&gt;
+	&lt;div&gt;Item two&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Vertical marquee</div>
+                     <div class="doc-callout__text">
+                        When using <code>top</code> or <code>bottom</code> direction,
+                        the container must have a fixed height and <code>overflow: hidden</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add smooth, performant marquee animations to your UI
+                     with zero setup and full control.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/posts/148360732?collection=1946808" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+              
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/headerdoc.html">
+                     Next: Header component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#options">Options</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#direction">Direction</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer data-anim-footer="" class="footer">
+	<div class="footer__container">
+
+	</div>
+</footer>
+   
+		</div>
+		
+   
+	</body>
+</html>
